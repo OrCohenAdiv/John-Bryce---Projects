@@ -1,20 +1,26 @@
 import { Question } from "./question";
-export class Exam {
 
+export class Exam {
     private questions: Question[] = [];
-    // constructor(public questionArr: Question[]) { }
+
+    addQuestion(question: Question): void {
+        this.questions.push(question);
+    }
 
     print(): void {
         for (const question of this.questions) {
             console.log(question.caption);
-            for (let i = 0; i < question.answers.length; i++) {
-                console.log(`${i}. ${question.answers[i]}`)
+            for (const answer of question.answers) {
+                console.log(answer);
             }
-            console.log('--------------------------------');
+
+            console.log('------------------------------');
         }
     }
+
     grade(answers: number[]): number {
         let totalCorrect = 0;
+
         for (let i = 0; i < answers.length; i++) {
             let question = this.questions[i];
             let answer = answers[i];
@@ -24,10 +30,7 @@ export class Exam {
             }
         }
 
-        return totalCorrect * answers.length / 100;
+        return totalCorrect / this.questions.length * 100;
     }
 
-    addQuestion(theQuestion: Question): void {
-        this.questions.push(theQuestion);
-    }
 }
