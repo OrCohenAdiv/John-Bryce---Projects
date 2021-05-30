@@ -1,0 +1,24 @@
+<h1>Calculator</h1>
+<div>
+  <img *ngIf="isBusy" src="https://thumbs.gfycat.com/RelievedSilentArcticwolf-max-1mb.gif">
+</div>
+<div>
+  <label>a</label>
+  <input #num1 (input)="setFirstNumber(num1.valueAsNumber)" type="number" [disabled]="isBusy">
+  <label #lab1>b</label>
+  <input #num2 (input)="setSecondNumber(num2.valueAsNumber)" type="number" [disabled]="isBusy">
+</div>
+<div>
+  <button (click)="calc()" [disabled]="isBusy">GO!!</button>
+</div>
+<div>
+  <p>
+    {{firstNumber}} + {{secondNumber}} = {{sum}};
+  </p>
+  <p>
+    {{firstNumber}} - {{secondNumber}} = {{diff}};
+  </p>
+  <p>
+    {{firstNumber}} * {{secondNumber}} = {{product}};
+  </p>
+</div>

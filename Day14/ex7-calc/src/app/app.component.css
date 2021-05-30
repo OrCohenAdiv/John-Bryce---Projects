@@ -1,0 +1,21 @@
+span{
+    margin: 10px;
+}
+
+img{
+    height: 30px;
+    margin: 10px;
+    margin-left: 170px;
+}
+button{
+margin-top: 20px;
+margin-left: 150px;
+}
+input{
+    padding: 3px;
+    margin: 10px;
+}
+h1{
+    margin-left: 150px;
+    color: rgba(23, 23, 204, 0.74);
+}
