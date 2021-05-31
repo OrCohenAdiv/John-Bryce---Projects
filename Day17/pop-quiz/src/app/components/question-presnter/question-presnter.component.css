@@ -1,0 +1,23 @@
+.caption{
+    margin:15px;
+    border-bottom: 1px solid black;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+ul{
+    padding: 0px;
+    margin: 0px;
+}
+li{
+    list-style: none;
+    margin: 8px;
+    padding: 4px;
+    border: 1px solid rgb(159, 100, 237);
+    border-radius: 8px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+li:hover{
+   background-color: rgba(113, 38, 211, 0.363);
+   cursor: pointer;
+}
