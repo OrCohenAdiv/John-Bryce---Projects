@@ -1,1 +1,2 @@
-<p>search-page works!</p>
+<input type="search" #keyword (input)="setKeyword(keyword.value)">
+<button (click)="GetJoke(keyword.value,0)">Search</button>
