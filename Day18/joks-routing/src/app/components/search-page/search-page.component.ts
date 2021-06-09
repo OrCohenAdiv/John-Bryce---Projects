@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { BehaviorSubject } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
 import { Joke } from 'src/app/models/joke.model';
 import { DataService } from 'src/app/services/data.service';
 
@@ -11,25 +11,20 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./search-page.component.css']
 })
 export class SearchPageComponent implements OnInit {
-  search$ = new BehaviorSubject<string>('');
-  results$!: Observable<Joke>;
 
-  constructor(private data: DataService) { }
+  constructor(private data: DataService, private router: Router) { }
 
   ngOnInit(): void {
-    this.results$ = this.search$.pipe(
-      switchMap((kw, index) => this.data.getJoke(kw, index))
-    );
   }
 
-  setKeyword(value: string) {
-    this.search$.next(value);
-  }
+  // async GetJoke(keyword: string, index: number): Promise<Joke> {
+  //   //  let joke = await this.data.getJoke(keyword, index);
+  //   //  console.log(joke);
+  //   return await this.data.getJoke(keyword, index);
 
-  GetJoke(keyword: string, index: number): Promise<Joke> {
-    let joke;
-    joke = console.log(this.data.getJoke(keyword, index));
-    return this.data.getJoke(keyword, index);
+  // }
 
+  goto(val: string) {
+    this.router.navigate(['joke', val, 0]);
   }
 }

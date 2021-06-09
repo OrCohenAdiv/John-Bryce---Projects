@@ -1,2 +1,8 @@
-<input type="search" #keyword (input)="setKeyword(keyword.value)">
-<button (click)="GetJoke(keyword.value,0)">Search</button>
+<input type="search" #keyword>
+<button (click)="goto(keyword.value)">Search</button>
+
+<!-- <div *ngFor="let caption of (captions$ | async); let i = index"
+        (click)="goto(i+1)"
+>
+    {{i+1}}.{{caption}}
+</div> -->
