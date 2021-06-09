@@ -1,0 +1,24 @@
+.root{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+}
+.answer-box{
+    height: auto;
+    margin: 8px;
+
+}
+h4{
+    margin: 2px;
+}
+
+.answer-box.correct{
+    border: 1px solid rgb(5, 223, 16);
+    color: green;
+}
+
+.answer-box.worng{
+    border: 1px solid rgb(223, 5, 5);
+    color: rgb(128, 0, 0);
+}
